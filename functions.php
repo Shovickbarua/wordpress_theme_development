@@ -106,3 +106,17 @@ register_nav_menu( 'main_menu', __('Main menu', 'shovickbarua') );
 // }
 // add_filter('walker_nav_menu_start_el', 'shovick_nav_description',10,1);
 
+// Sidebar Register Function
+
+function shovick_widgets_register(){
+    register_sidebar(array(
+        'name'=> __('Main Widget Area','shovickbarua'),
+        'id'=> 'sidebar-1',
+        'description'=> __('Appears in the sidebar in blog page and also other page', 'shovickbarua'),
+        'before_widget' => '<div class="child_sidebar">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="title"></h2>',
+        'after_title' => '</h2>',
+    ));
+}
+add_action( 'widgets_init', 'shovick_widgets_register' );

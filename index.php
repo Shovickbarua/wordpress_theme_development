@@ -27,9 +27,15 @@
                         _e('No post found');
                         endif;
                         ?>
+                        <div id="page_nav">
+                            <?php if('shovick_pagenav') {shovick_pagenav();} else{ ?>
+                                <?php next_posts_link( ); ?>
+                                <?php previous_posts_link( ); ?>
+                            <?php } ?> 
+                        </div>
                 </div>
-                <div class="col-md-9">
-                    <h2>This is sidebar Area</h2>
+                <div class="col-md-3">
+                    <?php get_sidebar( ) ?>
                 </div>
             </div>
         </div>
